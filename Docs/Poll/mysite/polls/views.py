@@ -25,7 +25,7 @@ def detail(request, question_id):
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
-    return render(reuest, "polls/detail.html", {"question": question})
+    return render(request, "polls/detail.html", {"question": question})
 
 # A shortcut: get_object_or_404()
 # It’s a very common idiom to use get() and raise Http404 if the object doesn’t exist. Django provides a shortcut. Here’s the detail() view, rewritten:
